@@ -16,10 +16,41 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
 
 
-	<bean id="myCar" class="in.javahome.springprojecte.Car">
-	   <property name="eng" ref="myEngine"/>
-	   
+	<bean id="myCar" class="in.javahome.springprojecte.Car" autowire="byType" 
+	init-method="myInit" destroy-method="myDestroy">
+	
+	</bean>
+
+	<bean id="eng" class="in.javahome.springprojecte.Engine" />
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<bean id="collBean" class="in.javahome.springprojecte.CollectionBean">
+		<property name="myLisy">
+			<list>
+				<value>Data-1</value>
+				<value>Data-2</value>
+				<value>Data-3</value>
+				<value>Data-4</value>
+			</list>
+		</property>
 	</bean>
 	
-	<bean id="myEngine" class="in.javahome.springprojecte.Engine"/>
+	<bean class="in.javahome.springprojecte.Person" lazy-init="true">
+		<constructor-arg value="Praveen" index="0"/>
+		<constructor-arg value="27" type="int" index="1"/>
+	</bean>
 </beans>

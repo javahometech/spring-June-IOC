@@ -1,6 +1,9 @@
 package in.javahome.springprojecte;
 
-public class Engine implements IEngine{
+import org.springframework.stereotype.Component;
+
+@Component
+public class Engine implements IEngine {
 	public void start() {
 		System.out.println("Engine started..");
 	}
